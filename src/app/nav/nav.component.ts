@@ -1,5 +1,5 @@
-import { Component, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { WeatherService } from 'src/app/_services/weather.service';
+import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../_services/weather.service';
 
 
 @Component({
