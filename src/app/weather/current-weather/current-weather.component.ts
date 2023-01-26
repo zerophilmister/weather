@@ -1,7 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CurrentWeather } from '../../_models/currentWeather';
 import { WeatherService } from '../../_services/weather.service';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-current-weather',
