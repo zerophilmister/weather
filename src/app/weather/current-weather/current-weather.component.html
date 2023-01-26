@@ -1,0 +1,44 @@
+
+ <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="">Weather</a>
+    <ul style="color: aliceblue;" class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="cWeather">
+      <li class="nav-item">   
+        <a class="nav-link ">
+          <h5>{{cWeather?.location?.name}}, {{cWeather?.location?.region}} {{cWeather?.current?.temp_f}} &#176;F</h5>
+        </a>
+      </li>
+    </ul>
+
+      <form class="d-flex"  autocomplete="off" >
+        <input 
+        name="zipcode"
+        [(ngModel)] = "zipcode"
+        class="form-control d-flex me-2 " 
+        type="number" 
+        placeholder="Zipcode" >
+        <button  class="btn btn-success"  (click)="loadWeather()" type="submit">Search</button>
+      </form>
+  </div>
+</nav> -->
+
+
+<div   class="card text-center" style="width: 30rem; margin-top: 10rem; margin-left: auto; margin-right: auto;">
+ 
+  <div class="card-body">
+    
+    <h2 class="card-title">Current Weather</h2>
+    <img style="width: 100px; height: 100px;" src="{{cWeather?.current?.condition?.icon}}" alt="Card image cap" >
+    <h4  class="card-text">{{cWeather?.current?.temp_f}}&#176;F.</h4>
+    <h4  class="card-text">Feels like: {{cWeather?.current?.feelslike_f}}&#176;F.</h4>
+    <h5 class="card-text">{{cWeather?.location?.region}}</h5>
+    <a href="#" class="btn btn-primary">MORE DETAILS</a>
+  </div>
+</div>
+  
+
+<!-- <div class="container" style="margin-top: 100px;" *ngIf="cWeather">
+  <h1>feels like: {{cWeather?.current?.feelslike_f}}f</h1>
+</div> -->
+

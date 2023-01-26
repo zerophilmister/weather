@@ -1,0 +1,28 @@
+
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+    <div class="container-fluid">
+      <a class="navbar-brand" href="">Weather</a>
+      <ul style="color: aliceblue;" class="navbar-nav me-auto mb-2 mb-md-0" >
+        <li class="nav-item">   
+          <a class="nav-link ">
+            
+          </a>
+        </li>
+      </ul>
+  
+        <form class="d-flex"  autocomplete="off" >
+          <input 
+          name="zipcode"
+          [(ngModel)] = "zipcode"
+          class="form-control d-flex me-2 " 
+          type="number" 
+          placeholder="Zipcode" >
+            <button  class="btn btn-success" type="submit" (click)="updateZip()">Search</button>
+        </form>
+
+    </div>
+  </nav>
+
+  
+  
