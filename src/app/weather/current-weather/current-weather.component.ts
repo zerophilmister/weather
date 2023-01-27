@@ -9,27 +9,28 @@ import { WeatherService } from '../../_services/weather.service';
 })
 export class CurrentWeatherComponent implements OnInit {
   zipcode: string | undefined;
-  cWeather: CurrentWeather | undefined;
+  // cWeather: CurrentWeather | undefined;
+  weatherObs$ = this.weatherService.getCurrentWeatherByZip();
 
   constructor(private weatherService: WeatherService) { }
 
   
 
   ngOnInit(): void {
-    this.loadWeather();
+    // this.loadWeather();
     }
   
 
-  loadWeather(){  
-    // const zip = this.zipcode.toString();
-   // if(this.zipcode.length < 5) return;
+  // loadWeather(){  
+  //   // const zip = this.zipcode.toString();
+  //  // if(this.zipcode.length < 5) return;
      
-    this.weatherService.getCurrentWeatherByZip().subscribe({
-      next: cWeather => this.cWeather = cWeather
+  //   this.weatherService.getCurrentWeatherByZip().subscribe({
+  //     next: cWeather => this.cWeather = cWeather
         
-    })
-    console.log(this.zipcode);
-  }
+  //   })
+  //   console.log(this.zipcode);
+  // }
   
   
 

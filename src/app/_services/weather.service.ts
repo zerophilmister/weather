@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, switchMap } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { CurrentWeather } from '../_models/currentWeather';
 
@@ -23,7 +23,17 @@ export class WeatherService {
     this.zipcode.next(zip);
   }
 
-  getCurrentWeatherByZip(){
-    return this.http.get<CurrentWeather>(this.baseUrl + this.apiKey + `&q=${this.zipcode.getValue()}`);
-  }
+
+  getCurrentWeatherByZip() { 
+    return this.zipcode.pipe(
+        switchMap((code) => { 
+            return this.http.get<CurrentWeather>
+                (this.baseUrl + this.apiKey + `&q=${code}`);
+        })
+    );
+}
+
+  // getCurrentWeatherByZip(){
+  //   return this.http.get<CurrentWeather>(this.baseUrl + this.apiKey + `&q=${this.zipcode.getValue()}`);
+  // }
 }
