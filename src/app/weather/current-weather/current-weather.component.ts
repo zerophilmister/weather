@@ -8,9 +8,8 @@ import { WeatherService } from '../../_services/weather.service';
   styleUrls: ['./current-weather.component.css']
 })
 export class CurrentWeatherComponent implements OnInit {
-  zipcode: string | undefined;
-  // cWeather: CurrentWeather | undefined;
   weatherObs$ = this.weatherService.getCurrentWeatherByZip();
+  
 
   constructor(private weatherService: WeatherService) { }
 
@@ -20,6 +19,8 @@ export class CurrentWeatherComponent implements OnInit {
     // this.loadWeather();
     }
   
+
+
 
   // loadWeather(){  
   //   // const zip = this.zipcode.toString();

@@ -1,0 +1,19 @@
+
+<div *ngIf="(weatherObs$ | async) as fWeather"   class="card text-center" style="width: 30rem; margin-top: 10rem; margin-left: auto; margin-right: auto;">
+ 
+    <div class="card-body">
+      
+      <h2 class="card-title">Weather details</h2>
+      
+      <h4  class="card-text">{{fWeather?.current?.temp_f}}&#176;F</h4>
+      <h4  class="card-text">Feels like: {{fWeather?.current?.feelslike_f}}&#176;F</h4>
+      <h5 class="card-text">{{fWeather?.location?.name}}, {{fWeather?.location?.region}}</h5>
+     
+      
+    </div>
+    <div class="card-body">
+      <img class="card-img-left" src="{{fWeather?.current?.condition?.icon}}" alt="Card image cap" >
+    </div>
+  </div>
+
+  <!-- style="width: 100px; height: 100px;" -->
