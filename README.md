@@ -6,6 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/zerophilmister/weather/)
 
+Enter a zipcode in the search bar to get current weather, hourly forecast and a daily forecast.
 
 ## Development server
 
