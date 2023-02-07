@@ -11,6 +11,7 @@ import { NavComponent } from './nav/nav.component';
 import { WeatherDetailsComponent } from './weather/weather-details/weather-details.component';
 import { WeatherForecastComponent } from './weather/weather-forecast-card/weather-forecast.component';
 import { WeatherForecastListComponent } from './weather/weather-forecast-list/weather-forecast-list.component';
+import { HourlyForecastComponent } from './weather/hourly-forecast/hourly-forecast.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WeatherForecastListComponent } from './weather/weather-forecast-list/we
     NavComponent,
     WeatherDetailsComponent,
     WeatherForecastComponent,
-    WeatherForecastListComponent
+    WeatherForecastListComponent,
+    HourlyForecastComponent
   ],
   imports: [
     BrowserAnimationsModule,

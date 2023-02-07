@@ -1,0 +1,30 @@
+
+<div *ngIf="(weatherObs$ | async) as fWeather" class="card" >
+    <div style="display: flex; justify-content: center;">
+     
+         <h3>
+             Hourly Forecast 
+         </h3>
+         
+    </div>
+     <div style="display: flex; justify-content: space-around; flex-direction: row; width: 40rem; margin-bottom: 10px;">
+         <div *ngFor="let hour of fWeather.forecast.forecastday[0].hour.slice(0,4)"  style=" margin-top: 10px; margin-left: 2rem;">
+ 
+             <div style="border-right: 1px solid black; padding-right: 20px; " >
+                 <h5 style="margin-right: 2rem;">{{hour.time| date: 'h'}}</h5>
+                 <img src="{{hour.condition.icon}}" alt="">
+                 <i class="fa-solid fa-droplet"></i>
+                 <h5></h5>
+                 <!-- <img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fd1nhio0ox7pgb.cloudfront.net%2F_img%2Fg_collection_png%2Fstandard%2F512x512%2Frain_drops.png&sp=1675711850T5f66f470a5ba14bc176958deec0df03da01715867ad0c24139494baadef46330" alt=""> -->
+                 <p>{{hour.chance_of_rain}}%</p>     
+                
+                 
+             </div>
+             
+         </div>
+         <div style=" display: flex; align-self: flex-end; ">
+             <button class="btn btn-primary"> Next 24 Hours</button>
+         </div>
+    </div>
+ </div>
+ 
