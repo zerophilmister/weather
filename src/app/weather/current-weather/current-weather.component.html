@@ -1,31 +1,76 @@
-
-
-<div class="container"  style="display: flex; justify-content: center;  margin-top: 5rem;">
-  <div *ngIf="(weatherObs$ | async) as cWeather"   class="card" style="width: 40rem;">
+<div class="container" style="display: flex; justify-content: center;  margin-top: 5rem;">
+  <div *ngIf="(weatherObs$ | async) as cWeather" class="card" style="width: 40rem;">
 
     <div class="card-body">
-        <div style=" display: flex; justify-content: center; ">
-          <h4 >Current Weather</h4>
-        </div>
-        
-      <div class="container" style="display: flex; flex-direction: column;">
-        <img style="width: 100px; height: 100px;" src="{{cWeather?.current?.condition?.icon}}"  >
-        <p>
-          Temperature: <b>{{cWeather?.current?.temp_f}}&#176;F</b>
-        </p>
+            
+      <div id="current-weather-card-center">
+        <h4>Current Weather</h4>
+        <b>{{cWeather?.location?.name}}, {{cWeather?.location?.region}}</b>
       </div>
-        <p  class="card-text">
-          Feels like: <b>{{cWeather?.current?.feelslike_f}}&#176;F</b>
-        </p>
-        <p class="card-text">
-          <b>{{cWeather?.location?.name}}, {{cWeather?.location?.region}}</b>
-        </p>
-        <div class="card-text text-end">
-          <button  routerLink="/weather-details"  class="btn btn-primary " > MORE DETAILS </button>
-        </div>
+      
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+          <div style="display: flex; flex-direction: row;  padding-left: 2rem;">
         
+            <div style="display: flex; flex-direction: row;">
+  
+              <div style="display: flex; flex-direction: column;  ">
+                <div>
+                  <img style="width: 125px; height: 125px; " src="{{cWeather?.current?.condition?.icon}}">
+                </div>
+                <div style="padding-left: 1rem;">
+                  <p >{{cWeather.current.condition.text}}</p>
+                </div>
+              </div>
+  
+              <div style="display: flex; flex-direction: column; justify-content:flex-start; padding-top: 4.25rem; padding-left: 2rem;  ">
+                <h1>
+                  <b>{{cWeather?.current?.temp_f}}&#176;F</b>
+                </h1>
+               <div> 
+                  <p >
+                  Feels like: <b>{{cWeather?.current?.feelslike_f}}&#176;F</b>
+                  </p>
+                </div>
+              </div>           
+            </div>
+        </div>
+  
+          <div style="display: flex; flex-direction:column; align-items: end; margin-top: 2rem;">
+   
+            <div style="border-bottom: 1px solid black; display: flex; justify-content: row;">
+              <div style="  word-spacing: 6.7rem; ">
+                <p>Wind {{cWeather.current.wind_mph}}</p>           
+               </div>
+              <div > 
+                <p> &nbsp;mph</p>
+              </div>
+            </div>
+            <div style="border-bottom: 1px solid black; display: flex; justify-content: row; margin-top: 1rem;">
+              <div style="  word-spacing: 6rem; ">
+                <p>Gusts {{cWeather.current.gust_mph}}</p>           
+               </div>
+              <div > 
+                <p> &nbsp;mph</p>
+              </div>
+            </div>
+            <div style="border-bottom: 1px solid black; display: flex; justify-content: row; margin-top: 1rem;">
+              <div style="  word-spacing: 6rem; ">
+                <p>Humidity {{cWeather.current.humidity}}</p>           
+               </div>
+              <div > 
+                <p> &nbsp;%</p>
+              </div>
+            </div>
       </div>
-    
+
+
+        </div>
+      <div class="card-text text-end" style="margin-top: 10px;">
+        <button routerLink="/weather-details" class="btn btn-primary "> MORE DETAILS </button>
+      </div>
+
+    </div>
+
   </div>
 </div>
 
@@ -35,4 +80,3 @@
 <!-- <div class="container" style="margin-top: 100px;" *ngIf="cWeather">
   <h1>feels like: {{cWeather?.current?.feelslike_f}}f</h1>
 </div> -->
-
