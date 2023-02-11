@@ -15,5 +15,5 @@ export class WeatherForecastListComponent implements OnInit {
   ngOnInit(): void {
   }
 
- 
+
 }
