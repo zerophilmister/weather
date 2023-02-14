@@ -1,19 +1,64 @@
 
-<div *ngIf="(weatherObs$ | async) as fWeather"   class="card text-center" style="width: 30rem; margin-top: 10rem; margin-left: auto; margin-right: auto;">
- 
-    <div class="card-body">
-      
-      <h2 class="card-title">Weather details</h2>
-      
-      <h4  class="card-text">{{fWeather?.current?.temp_f}}&#176;F</h4>
-      <h4  class="card-text">Feels like: {{fWeather?.current?.feelslike_f}}&#176;F</h4>
-      <h5 class="card-text">{{fWeather?.location?.name}}, {{fWeather?.location?.region}}</h5>
-     
-      
-    </div>
-    <div class="card-body">
-      <img class="card-img-left" src="{{fWeather?.current?.condition?.icon}}" alt="Card image cap" >
+<div *ngIf="(weatherObs$ | async) as dWeather" >
+  <div class="container" style="display: flex; justify-content: center;  margin-top: 8rem;">
+    <div class="card" style="width: 33rem;">
+      <div class="card-body">
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+          <!-- sunrise -->
+          <div style="display: flex; flex-direction: column; " >
+            <div style="display: flex; align-self: center;">
+              <span class="material-symbols-outlined" style="padding-right: 1rem;">
+                sunny
+                </span>
+              <p>Sunrise/Sunset</p>
+            </div>
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid;">
+             <p>Sunrise</p>
+              <div style="margin-left: 7rem;">
+                <p>{{dWeather.forecast.forecastday[0].astro.sunrise}}</p>
+              </div>
+            </div>
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid; padding-top: 1rem;">
+              <p>Sunset</p>
+               <div style="margin-left: 7rem;">
+                 <p>{{dWeather.forecast.forecastday[0].astro.sunset}}</p>
+               </div>
+             </div>
+          </div>
+          <div style="border-left: 1px solid ;"></div>
+          <!-- sunset -->
+          <div style="display: flex; flex-direction: column; " >
+            <div style="display: flex; align-self: center;">
+              <span class="material-symbols-outlined" style="padding-right: 1rem;">
+                nightlight
+                </span>
+              <p>Moonrise/Moonset</p>
+            </div>
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid;">
+              <p>Moonrise</p>
+              <div style="margin-left: 7rem;">
+                <p>{{dWeather.forecast.forecastday[0].astro.moonrise}}</p>
+              </div>
+            </div>
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid; padding-top: 1rem;">
+              <div >
+               <p>Moonset</p>
+              </div>
+              <div style="margin-left: 7rem;">
+                <p>{{dWeather.forecast.forecastday[0].astro.moonset}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </div>
   </div>
+  
+
+</div>
+
+
 
   <!-- style="width: 100px; height: 100px;" -->

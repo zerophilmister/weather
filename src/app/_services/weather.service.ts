@@ -44,6 +44,16 @@ getForecastWeatherByZip() {
   );
 }
 
+getWeatherDetailsByZip() { 
+  return this.zipcode.pipe(
+      switchMap((code) => { 
+          return this.http.get<ForecastWeather>
+              (this.baseUrlForecast + this.apiKey + `&q=${code}&days=1&aqi=yes&alerts=no`);
+      })
+  );
+}
+
+
   // getCurrentWeatherByZip(){
   //   return this.http.get<CurrentWeather>(this.baseUrl + this.apiKey + `&q=${this.zipcode.getValue()}`);
   // }
