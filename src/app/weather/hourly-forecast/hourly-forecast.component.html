@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 <div *ngIf="(weatherObs$ | async) as fWeather" class="card" >
     <div style="display: flex; justify-content: center;">
      
@@ -15,7 +15,9 @@
                  <img src="{{hour.condition.icon}}" alt="">
                  <i class="fa-solid fa-droplet"></i>
                  <h5></h5>
-                 <!-- <img src="https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fd1nhio0ox7pgb.cloudfront.net%2F_img%2Fg_collection_png%2Fstandard%2F512x512%2Frain_drops.png&sp=1675711850T5f66f470a5ba14bc176958deec0df03da01715867ad0c24139494baadef46330" alt=""> -->
+                 <span class="material-symbols-outlined" style="color: #3385ff; ">
+                    water_drop
+                </span>
                  <p>{{hour.chance_of_rain}}%</p>     
                 
                  

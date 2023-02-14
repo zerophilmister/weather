@@ -8,7 +8,7 @@ import { WeatherService } from '../../_services/weather.service';
 })
 export class WeatherDetailsComponent implements OnInit {
 
-  weatherObs$ = this.weatherService.getForecastWeatherByZip();
+  weatherObs$ = this.weatherService.getWeatherDetailsByZip();
   
 
   constructor(private weatherService: WeatherService) { }
