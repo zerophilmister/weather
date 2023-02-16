@@ -1,14 +1,108 @@
 
-<div *ngIf="(weatherObs$ | async) as dWeather" >
-  <div class="container" style="display: flex; justify-content: center;  margin-top: 8rem;">
+<div *ngIf="(weatherObs$ | async) as dWeather" style="display: flex; flex-direction: column;" >
+  <!-- Day Weather -->
+  <div class="container" style="display: flex; justify-content: center;  margin-top: 8rem; " >
+    <div class="card" style="width: 38rem;">
+      <div class="card-body"> 
+        <!-- day title and date -->
+        <div style="display: flex; justify-content: center;">
+           <h4>Day</h4> 
+           <h4>&nbsp;{{dWeather.forecast.forecastday[0].date | date: 'd'}}th</h4>
+        </div>
+        <!-- Current condition and description -->
+        <div style="display: flex; flex-direction: row; justify-content: center; margin-bottom: 1rem;">
+          <div style="padding-top: .5rem;">
+            <img src="{{dWeather.forecast.forecastday[0].day.condition.icon}}">
+            <p>{{dWeather.forecast.forecastday[0].day.condition.text}}</p>
+          </div>
+          <div style="padding-left: 1.5rem; padding-top: 1rem;">
+            <h1>{{dWeather.forecast.forecastday[0].day.avgtemp_f}}&#176;F</h1>
+            <p>Avg Temperature</p>
+          </div>
+        </div>
+        <!-- details columns -->
+        <div style="display: flex; flex-direction: row; justify-content: space-around;">
+          <!-- More Details column 1 -->
+          <div style="display: flex; flex-direction: column; " >
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid;">
+              <div>
+               <p>Max Temp</p>
+              </div>
+               <div style="padding-left: 8rem;">
+                 <p>{{dWeather.forecast.forecastday[0].day.maxtemp_f}}&#176;F</p>
+               </div>
+             </div>
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid;">
+             <div>
+              <p>Avg Humidity</p>
+             </div>
+              <div style="padding-left: 7rem;">
+                <p>{{dWeather.forecast.forecastday[0].day.avghumidity}}%</p>
+              </div>
+            </div>
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid; padding-top: 1rem;">
+              <p>Avg Visibility</p>
+               <div style="padding-left: 6rem;">
+                 <p>{{dWeather.forecast.forecastday[0].day.avgvis_miles}} miles</p>
+               </div>
+             </div>
+             <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid; padding-top: 1rem;">
+              <p>UV Index</p>
+               <div style="padding-left: 10rem;">
+                 <p>{{dWeather.forecast.forecastday[0].day.uv}} </p>
+               </div>
+             </div>
+          </div>
+          <!-- vertical bar -->
+          <div style="border-left: 1px solid; "></div>
+          <!-- More details column 2 -->
+          <div style="display: flex; flex-direction: column; " >
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid;">
+              <div>
+               <p>Min Temp</p>
+              </div>
+               <div style="padding-left: 10rem;">
+                 <p>{{dWeather.forecast.forecastday[0].day.mintemp_f}}&#176;F</p>
+               </div>
+             </div>
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid;">
+              <p>Chance of Rain</p>
+              <div style="margin-left: 8rem;">
+                <p>{{dWeather.forecast.forecastday[0].day.daily_chance_of_rain}}%</p>
+              </div>
+            </div>
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid; padding-top: 1rem;">
+              <div >
+               <p>Chance of Snow</p>
+              </div>
+              <div style="margin-left: 7rem;">
+                <p>{{dWeather.forecast.forecastday[0].day.daily_chance_of_snow}}%</p>
+              </div>
+            </div>
+            <div style="display: flex;  flex-direction: row;  border-bottom: 1px solid; padding-top: 1rem;">
+              <div >
+               <p>Total Precipitation</p>
+              </div>
+              <div style="padding-left: 5rem;">
+                <p>{{dWeather.forecast.forecastday[0].day.totalprecip_in}} in</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!-- Sun and Moon -->
+  <div class="container" style="display: flex; justify-content: center;  margin-top: 8rem; margin-bottom: 5rem;">
     <div class="card" style="width: 33rem;">
       <div class="card-body">
 
         <div style="display: flex; flex-direction: row; justify-content: space-between;">
-          <!-- sunrise -->
+          <!-- sunrise/sunset -->
           <div style="display: flex; flex-direction: column; " >
             <div style="display: flex; align-self: center;">
-              <span class="material-symbols-outlined" style="padding-right: 1rem;">
+              <span class="material-symbols-outlined" style="padding-right: 1rem; color: #ff9900;">
                 sunny
                 </span>
               <p>Sunrise/Sunset</p>
@@ -27,7 +121,7 @@
              </div>
           </div>
           <div style="border-left: 1px solid ;"></div>
-          <!-- sunset -->
+          <!-- Moonrise/Moonset -->
           <div style="display: flex; flex-direction: column; " >
             <div style="display: flex; align-self: center;">
               <span class="material-symbols-outlined" style="padding-right: 1rem;">
@@ -55,7 +149,7 @@
       </div>
     </div>
   </div>
-  
+
 
 </div>
 
