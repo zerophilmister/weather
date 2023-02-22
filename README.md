@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## How to test project
 
-Please use an update Firefox or Chrome desktop browser to open the StackBlitz link which will create a web container in your browser for the application.
+Please use an updated Chrome or Chromium based desktop browser to open the StackBlitz link which will create a web container in your browser for the application. If you're still having an issue, please check your browser settings. For more information: https://developer.stackblitz.com/platform/webcontainers/browser-config
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/zerophilmister/weather/)
 
