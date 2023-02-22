@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## How to test project
 
+Please use an update Firefox or Chrome desktop browser to open the StackBlitz link which will create a web container in your browser for the application.
+
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/zerophilmister/weather/)
 
 Enter a zipcode in the search bar to get current weather, hourly forecast and a daily forecast.
